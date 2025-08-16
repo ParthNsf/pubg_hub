@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark Theme (Default) */
+    --color-background: #0F0F23; /* deep-navy */
+    --color-foreground: #F8FAFC; /* slate-50 */
+    --color-border: rgba(139, 92, 246, 0.2); /* purple-500 with opacity */
+    --color-input: #1A1B3A; /* custom-surface */
+    --color-ring: #00D4FF; /* cyan-400 */
+    
+    /* Card Colors */
+    --color-card: #1A1B3A; /* custom-surface */
+    --color-card-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Popover Colors */
+    --color-popover: #1A1B3A; /* custom-surface */
+    --color-popover-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Muted Colors */
+    --color-muted: #1A1B3A; /* custom-surface */
+    --color-muted-foreground: #94A3B8; /* slate-400 */
+    
+    /* Primary Colors */
+    --color-primary: #00D4FF; /* cyan-400 */
+    --color-primary-foreground: #0F0F23; /* deep-navy */
+    
+    /* Secondary Colors */
+    --color-secondary: #8B5CF6; /* purple-500 */
+    --color-secondary-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Destructive Colors */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Accent Colors */
+    --color-accent: #10B981; /* emerald-500 */
+    --color-accent-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Success Colors */
+    --color-success: #22C55E; /* green-500 */
+    --color-success-foreground: #F8FAFC; /* slate-50 */
+    
+    /* Warning Colors */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #0F0F23; /* deep-navy */
+    
+    /* Error Colors */
+    --color-error: #EF4444; /* red-500 */
+    --color-error-foreground: #F8FAFC; /* slate-50 */
+  }
+
+  .light {
+    /* Light Theme Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #0F172A; /* slate-900 */
+    --color-border: rgba(139, 92, 246, 0.2); /* purple-500 with opacity */
+    --color-input: #F1F5F9; /* slate-100 */
+    --color-ring: #0EA5E9; /* sky-500 */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #0F172A; /* slate-900 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #0F172A; /* slate-900 */
+    
+    /* Muted Colors */
+    --color-muted: #F1F5F9; /* slate-100 */
+    --color-muted-foreground: #64748B; /* slate-500 */
+    
+    /* Primary Colors */
+    --color-primary: #0EA5E9; /* sky-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #8B5CF6; /* purple-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #EF4444; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #059669; /* emerald-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #16A34A; /* green-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    
+    /* Error Colors */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .gaming-shadow {
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.15);
+  }
+  
+  .light .gaming-shadow {
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.15);
+  }
+  
+  .gaming-shadow-purple {
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15);
+  }
+  
+  .gaming-shadow-green {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+  }
+  
+  .light .gaming-shadow-green {
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.15);
+  }
+  
+  .pulse-slow {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .transition-gaming {
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .transition-gaming-slow {
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Theme transition for all interactive elements */
+  .theme-transition {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  }
+}
